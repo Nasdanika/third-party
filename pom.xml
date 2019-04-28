@@ -24,16 +24,21 @@
 			<url>http://download.eclipse.org/releases/2019-03</url>
 			<layout>p2</layout>
 		</repository>
-		<!--
 		<repository>
-			<id>orbit</id>
-			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository</url>
+			<id>maven-osgi</id>
+			<url>http://www.nasdanika.org/home/products/maven-osgi/repository</url>
 			<layout>p2</layout>
 		</repository>
-		-->
 	</repositories>
 
 	<build>
+		<extensions>
+	      <extension>
+	        <groupId>org.apache.maven.wagon</groupId>
+	         <artifactId>wagon-ssh</artifactId>
+	         <version>3.2.0</version>
+	      </extension>
+		</extensions>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
@@ -104,6 +109,7 @@
 	<modules>
 		<!-- <module>../net.sourceforge.plantuml</module> -->
 		<module>flexmark</module>
+		<module>jjwt</module>
 		<module>feature</module>
 		<module>repository</module>
 	</modules>

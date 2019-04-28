@@ -26,6 +26,9 @@ jobs:
       # Downloading flexmark dependencies
       - run:
             command: cd flexmark;mvn -f pom-dependencies.xml dependency:copy-dependencies -DoutputDirectory=lib
+      # Downloading JJWT dependencies
+      - run:
+            command: cd jjwt;mvn -f pom-dependencies.xml dependency:copy-dependencies -DoutputDirectory=lib
       - run: 
             command: mvn -s .circleci/settings.xml clean verify site-deploy
             no_output_timeout: 120m
