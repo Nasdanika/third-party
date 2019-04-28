@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.nasdanika.third-party.feature"
+      label="Nasdanika Third Party Bundles"
+      version="2.2019.04.qualifier"
+      provider-name="Nasdanika LLC">
+
+   <description>
+      Third party libraries wrapped into OSGi bunldes.
+   </description>
+
+   <plugin
+         id="com.vladsch.flexmark"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
