@@ -29,6 +29,3 @@ jobs:
       - run: 
             command: mvn -s .circleci/settings.xml clean verify site-deploy
             no_output_timeout: 120m
-      - run: 
-            command: mvn -s .circleci/settings.xml -f jar-pom.xml clean deploy
-            no_output_timeout: 120m
