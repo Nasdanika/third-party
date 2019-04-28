@@ -10,14 +10,18 @@
 		<version>2.2019.04-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
+	
+	<properties>
+		<siteDir>third-party/${project.version}/${env.CIRCLE_BRANCH}</siteDir>
+	</properties>
+	
 	<build>
 		<extensions>
-			<!-- Enabling the use of FTP -->
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ftp</artifactId>
-				<version>3.0.0</version>
-			</extension>
+	      <extension>
+	        <groupId>org.apache.maven.wagon</groupId>
+	         <artifactId>wagon-ssh</artifactId>
+	         <version>3.2.0</version>
+	      </extension>
 		</extensions>
 		<plugins>
 			<plugin>
@@ -105,14 +109,52 @@
 					</execution>
 				</executions>
 			</plugin>			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>ftp</id>
+						<phase>pre-site</phase>
+						<configuration>
+							<target>
+								<ftp passive="yes" action="mkdir" server="${env.FTP_SERVER}" userid="${env.FTP_USER}" password="${env.FTP_PASSWORD}" remotedir="/${siteDir}"/>
+							
+								<ftp passive="yes" action="delete" server="${env.FTP_SERVER}" userid="${env.FTP_USER}" password="${env.FTP_PASSWORD}" remotedir="/${siteDir}">
+									<fileset defaultexcludes="false">
+										<include name="**" />
+									</fileset>
+								</ftp>
+								
+								<ftp passive="yes" action="rmdir" server="${env.FTP_SERVER}" userid="${env.FTP_USER}" password="${env.FTP_PASSWORD}" remotedir="/${siteDir}">
+									<fileset defaultexcludes="false">
+										<include name="**" />
+									</fileset>
+								</ftp>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-commons-net</artifactId>
+						<version>1.10.5</version>
+					</dependency>
+				</dependencies>
+			</plugin>								
 		</plugins>
 	</build>
 	
-	<url>https://www.nasdanika.org/home/products/third-party/</url>
+	<url>https://www.nasdanika.org/products/${siteDir}/</url>
 	<distributionManagement>
 		<site>
 			<id>nasdanika-org</id>
-			<url>ftp://${env.FTP_SERVER}/third-party</url>
+			<url>sftp://${env.FTP_SERVER}/${siteDir}</url>
 		</site>
-	</distributionManagement>		
+	</distributionManagement>	
 </project>
