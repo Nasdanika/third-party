@@ -6,6 +6,11 @@ Third party dependencies used by Nasdanika products which cannot be introduced w
 * [Archived repository](org.nasdanika.third-party.repository-2.2019.04-SNAPSHOT.zip).
 * [Sources](third-party.zip)
 
+## Features
+
+* Equinox - Eclipse Equinox runtime bundles.
+* Jetty - Jetty runtime bundles.
+
 ## Bundles
 
 | Bundle        | Version      | Description  |
