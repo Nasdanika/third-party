@@ -26,7 +26,7 @@
 		</repository>
 		<repository>
 			<id>maven-osgi</id>
-			<url>http://www.nasdanika.org/home/products/maven-osgi/repository</url>
+			<url>https://www.nasdanika.org/home/products/maven-osgi/repository</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>
@@ -116,7 +116,7 @@
 		<module>repository</module>
 	</modules>
 	<name>Nasdanika Third Party Dependencies</name>
-	<url>http://www.nasdanika.org/home/products/third-party</url>
+	<url>https://www.nasdanika.org/home/products/third-party</url>
 	<organization>
 		<name>Nasdanika LLC</name>
 		<url>https://www.nasdanika.org</url>
