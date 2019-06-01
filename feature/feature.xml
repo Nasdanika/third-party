@@ -9,6 +9,11 @@
       Third party libraries wrapped into OSGi bunldes.
    </description>
 
+   <url>
+      <discovery label="Eclipse 2019-03" url="http://download.eclipse.org/releases/2019-03"/>
+      <discovery label="Nasdanika Maven OSGi" url="https://www.nasdanika.org/home/products/maven-osgi/repository"/>
+   </url>
+
    <plugin
          id="com.vladsch.flexmark"
          download-size="0"
