@@ -110,6 +110,7 @@
 		<!-- <module>../net.sourceforge.plantuml</module> -->
 		<module>flexmark</module>
 		<module>jjwt</module>
+		<module>janino</module>
 		<module>feature</module>
 		<module>equinox.feature</module>
 		<module>jetty.feature</module>

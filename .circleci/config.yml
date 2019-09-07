@@ -29,6 +29,9 @@ jobs:
       # Downloading JJWT dependencies
       - run:
             command: cd jjwt;mvn -f pom-dependencies.xml dependency:copy-dependencies -DoutputDirectory=lib
+      # Downloading Janino dependencies
+      - run:
+            command: cd janino;mvn -f pom-dependencies.xml dependency:copy-dependencies -DoutputDirectory=lib
       - run: 
             command: mvn -s .circleci/settings.xml clean verify site-deploy
             no_output_timeout: 120m
