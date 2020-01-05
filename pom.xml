@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.third-party</groupId>
 	<artifactId>org.nasdanika.third-party.parent</artifactId>
-	<version>2.2019.09-SNAPSHOT</version>
+	<version>2.2020.01-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<!-- tycho requires maven >= 3.0 -->
@@ -21,12 +21,12 @@
 		<!-- configure p2 repository to resolve against -->
 		<repository>
 			<id>foundation</id>
-			<url>https://www.nasdanika.org/home/foundation-repository</url>
+			<url>https://www.nasdanika.org/master/foundation-repository</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
 			<id>maven-osgi</id>
-			<url>https://www.nasdanika.org/home/products/maven-osgi/repository</url>
+			<url>https://www.nasdanika.org/master/products/maven-osgi/repository</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>
