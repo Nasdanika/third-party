@@ -112,8 +112,10 @@
 		<module>jjwt</module>
 		<module>janino</module>
 		<module>feature</module>
+		<!--
 		<module>equinox.feature</module>
 		<module>jetty.feature</module>
+		-->
 		<module>repository</module>
 	</modules>
 	<name>Nasdanika Third Party Dependencies</name>
